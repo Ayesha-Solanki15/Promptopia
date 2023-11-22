@@ -20,7 +20,7 @@ const handler = NextAuth({
     },
     async signIn({ profile }) {
       try {
-        //every next.js route is a serverless route i.e. serverLess -> Lambda
+        //every next.js route is a serverless route i.e. serverLess -> Lambda function and it opens only when it's called
         await connectToDB();
         //check if a user already exists
         const userExists = await User.findOne({
